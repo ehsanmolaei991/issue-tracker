@@ -18,9 +18,11 @@
       }
     ],
     "paths": {
+      "@/prisma/*": ["./prisma/*"],
       "@/components/*": ["./src/components/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/utils/*": ["./src/utils/*"],
+      "@/styles/*": ["./src/styles/*"],
       "@/constants/*": ["./src/constants/*"]
     }
   },

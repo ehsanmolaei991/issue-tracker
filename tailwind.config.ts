@@ -9,6 +9,10 @@ const config: Config = {
   theme: {
     container: {
       center: true,
+      padding: "1rem",
+    },
+    fontFamily: {
+      quicksand: "var(--font-quicksand)",
     },
     extend: {
       backgroundImage: {

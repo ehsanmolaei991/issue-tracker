@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
-import "./globals.css";
+import "@/styles/globals.css";
+import "@/styles/theme-config.css";
+import "@radix-ui/themes/styles.css";
 import classNames from "classnames";
 import { Navbar } from "@/components/navbar";
+import { Theme, ThemePanel } from "@radix-ui/themes";
 
-const inter = Quicksand({ weight: ["300", "400", "700"], subsets: ["latin"] });
+const quicksand = Quicksand({
+  weight: ["300", "400", "700"],
+  subsets: ["latin"],
+  variable: "--font-quicksand",
+});
 
 export const metadata: Metadata = {
   title: "Issue Tracker!",
@@ -18,9 +25,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={classNames("bg-white", inter.className)}>
-        <Navbar />
-        <main className="container py-4">{children}</main>
+      <body
+        className={classNames("bg-white", quicksand.variable, "font-quicksand")}
+      >
+        <Theme appearance="light" accentColor="violet">
+          <Navbar />
+          <main className="container py-4">{children}</main>
+          {/* <ThemePanel /> */}
+        </Theme>
       </body>
     </html>
   );
